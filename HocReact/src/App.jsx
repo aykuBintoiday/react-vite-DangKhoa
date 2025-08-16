@@ -2,8 +2,19 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
-function App() {
+const App = () => {
   const [count, setCount] = useState(0)
+
+  // arrow Funtion
+  // function myFuntion(){
+  //   console.log("run my Funtion");
+  // }
+
+  const myFuntion = () => {
+    console.log("run my Funtion");
+  }
+
+  myFuntion();
 
   return (
     <div className="App">
