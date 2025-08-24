@@ -1,19 +1,27 @@
+import { useState } from "react";
+
 const TodoNew = (props) => {
-    console.log(">>> check point: ", props);
+    // useState Hook (getter/setter)
+    // const valueInput = "";
+    const [valueInput, setValueInput] = useState("Bin");
+
     const {addNewTodo} = props;
 
     // addNewTodo("Bin");
     const handleClick = () => {
-        alert("Click me");
+        console.log(">>> check valueInput: ", valueInput)
     }
 
     const handleOnChange = (name) => {
-        console.log(">>> handleOnChange", name);
+        setValueInput(name);
     }
     return (
     <div>
         <input type="text" placeholder="hãy nhập điều mà bạn muốn" onChange={(event) => {handleOnChange(event.target.value)}}/>
         <button onClick={handleClick}>Add</button>
+        <div>
+            My text input is : {valueInput}
+        </div>
     </div>
     )
 }
