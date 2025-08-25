@@ -9,18 +9,23 @@ const TodoNew = (props) => {
 
     // addNewTodo("Bin");
     const handleClick = () => {
-        addNewTodo(valueInput);
-        setValueInput("");
+
+        { valueInput.trim() === "" ? alert("Bạn hãy nhập dữ liệu!") :
+            addNewTodo(valueInput);
+            setValueInput("");
+        }
     }
 
     const handleOnChange = (name) => {
         setValueInput(name);
     }
+
     return (
     <div>
         <input 
         type="text" 
-        placeholder="hãy nhập điều mà bạn muốn" onChange={(event) => {handleOnChange(event.target.value)}}
+        placeholder="hãy nhập điều mà bạn muốn" 
+        onChange={(event) => {handleOnChange(event.target.value)}}
         value={valueInput}
         />
         <button onClick={handleClick}>Add</button>
