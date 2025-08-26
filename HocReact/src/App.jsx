@@ -4,6 +4,7 @@ import TodoData from './components/todo/TodoData'
 import reactLogo from './assets/react.svg';
 import { useState } from 'react';
 import Header from './components/layout/header';
+import { Outlet } from 'react-router-dom';
 const App = () => {
 
   const [todoList, setTodoList] = useState([
@@ -73,8 +74,9 @@ const App = () => {
         <img src={reactLogo} alt="Anh" />
       </div>
       }
-
     </div>
+    <Outlet/>
+    
     </>
   )
 }
